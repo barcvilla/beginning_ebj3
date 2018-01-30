@@ -65,6 +65,10 @@ public class SearchFacadeBean implements SearchFacade, SearchFacadeLocal
         countryMap.put("France","Burdeos");
     }
     
+    /**
+     * El Callback PreDestroy ocurre antes que el contenedor destruya un bean no usado o expirado en su pool de objetos
+     * Este Callback puede ser usado para cerrar  cualquier conexion pool que ha sido creado con dependency injection
+     */
     @PreDestroy
     public void destroyWineList()
     {
